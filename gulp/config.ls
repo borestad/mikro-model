@@ -4,7 +4,6 @@ basedir       = path.resolve(process.cwd!)
 dest          = "#{basedir}/.build"
 root          = "#{basedir}"
 src           = "#{root}/src"
-htdocs_src    = "#{root}/htdocs"
 
 require! 'glob'
 
@@ -12,9 +11,8 @@ export server =
   host: '0.0.0.0'
   port: 10000
 
-export src =          src
-export htdocs_src =          htdocs_src
-export node_modules =        "#{root}/node_modules"
+export src            = src
+export node_modules   = "#{root}/node_modules"
 
 
 ################################################
@@ -51,7 +49,7 @@ export browserSync =
 # Livescript
 ################################################
 
-browserify =
+export browserify =
   transforms:
     liveify: "#{node_modules}/liveify"
 
@@ -67,18 +65,14 @@ browserify =
 
 
 for file in glob.sync "#{src}/*.ls"
-  console.log file
+
   filename  = path.basename file              # '/foo/bar.ls' => 'bar.ls'
   dotext    = path.extname filename           # .ls
   ext       = dotext.replace '.', '', 'g'     # ls
   basename  = path.basename(filename, dotext) # bar
 
-
   browserify.client.bundleConfigs.push {
     entries: "#{src}/#{filename}"
     dest: dest
-    outputName: "#{basename}-#{ext}.js"
+    outputName: "#{basename}.js"
   }
-
-
-export browserify = browserify
