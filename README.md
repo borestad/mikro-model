@@ -8,7 +8,7 @@ je-model is a tiny library that simplifies the usage of models in Javascript
 ## Goals of this project
 - To squeeze in as much functionality as possible in a tiny object wrapper 
 - Be very generic and not very opiniated
-- Support nested models
+- Support nested models/objects and arrays since I often work with useless third party API's that I don't have control over.
 - Super flexible and modularized code
 - Lazy evaluate data. No need to calculate things every single time (Backbone.NestedModel *nudge nudge*)
 - Experiment with a great gulp TDD workflow
