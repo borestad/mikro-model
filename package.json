@@ -31,10 +31,12 @@
   "dependencies": {
     "better-console": "^0.2.4",
     "browser-sync": "^2.7.7",
+    "browserify": "^10.2.4",
     "chalk": "^1.0.0",
     "cheerio": "^0.19.0",
     "commander": "^2.8.1",
     "debug": "^2.2.0",
+    "del": "^1.2.0",
     "eventemitter2": "^0.4.14",
     "express": "^4.12.4",
     "fs": "0.0.2",
@@ -44,19 +46,24 @@
     "gulp-changed": "^1.2.1",
     "gulp-debug": "^2.0.1",
     "gulp-livescript": "^2.4.0",
+    "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.5",
+    "harp": "^0.17.0",
     "jade": "^1.10.0",
     "livescript": "^1.4.0",
     "lodash": "^3.9.3",
     "lodash-contrib": "^241.4.14",
+    "minimist": "^1.1.1",
     "path": "^0.11.14",
     "prelude": "^0.1.9",
+    "pretty-hrtime": "^1.0.0",
     "run-sequence": "^1.1.0",
     "shelljs": "^0.5.1",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.2"
   }
 }

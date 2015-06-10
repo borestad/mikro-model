@@ -1,7 +1,7 @@
 # For development => gulp
 # For production  => gulp -p
 module.exports = (gulp) ->
-
+  startTime = void
   debug = require('debug')('lilly:gulp')
 
   unless gulp
@@ -17,10 +17,26 @@ module.exports = (gulp) ->
 
   # Lilly functionality
   $.lilly =
-    bundle-logger:  require './util/bundleLogger'
-    handle-errors:  require './util/handleErrors'
+    bundle-logger:
+      start: (filepath) ->
+        startTime := process.hrtime!
+        gutil.log 'Bundling', (gutil.colors.green filepath) + '...'
+
+      end: (filepath) ->
+        taskTime = process.hrtime startTime
+        prettyTime = prettyHrtime taskTime
+        gutil.log 'Bundled', (gutil.colors.green filepath), 'in', gutil.colors.magenta prettyTime
+
+    handle-errors:  ->
+      args = Array::slice.call arguments
+      (notify.onError {
+        title: 'Compile Error'
+        message: '<%= error %>'
+      }).apply this, args
+      @emit 'end'
+
     config:         require './config'
-    log-events:     require('./util/logEvents')(gulp)
+    #log-events:     require('./util/logEvents')(gulp)
 
   # Common functionality
   $.fn =
