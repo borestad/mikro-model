@@ -28,7 +28,8 @@ je-model is a tiny library that simplifies the usage of models in Javascript
 - Because I don't want to sacrify performance for developer ergonomics.
 - Because I love Ruby collections
 - Because computed properties are so god damn convenient.
-- Because I love the idea of LINQ
+- Because I love simplicify of quering with LINQ/MongoDB/SQL
+- Because angels cry when they see the elvis operator
 - Because I like the simplicity of Backbone.Model but curse at it's shortcomings.
 - Because I've spent too much time debugging Backbone.NestedModel
 - Because Open Source is awesome.
