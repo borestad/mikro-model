@@ -20,16 +20,16 @@ module.exports = (gulp) ->
     bundle-logger:
       start: (filepath) ->
         startTime := process.hrtime!
-        gutil.log 'Bundling', (gutil.colors.green filepath) + '...'
+        $.util.log 'Bundling', ($.util.colors.green filepath) + '...'
 
       end: (filepath) ->
         taskTime = process.hrtime startTime
         prettyTime = prettyHrtime taskTime
-        gutil.log 'Bundled', (gutil.colors.green filepath), 'in', gutil.colors.magenta prettyTime
+        $.util.log 'Bundled', ($.util.colors.green filepath), 'in', $.util.colors.magenta prettyTime
 
     handle-errors:  ->
       args = Array::slice.call arguments
-      (notify.onError {
+      ($.notify.onError {
         title: 'Compile Error'
         message: '<%= error %>'
       }).apply this, args
@@ -42,7 +42,6 @@ module.exports = (gulp) ->
   $.fn =
     browser-sync:   require 'browser-sync'
     reload:         require('browser-sync').reload
-    gutil:          require 'gulp-util'
     pretty-hrtime:  require 'pretty-hrtime'
     chalk:          require 'chalk'
     path:           require 'path'

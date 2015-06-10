@@ -1,12 +1,12 @@
 require! 'path'
 
 basedir       = path.resolve(process.cwd!)
-dest          = "#{basedir}/.build-client"
+dest          = "#{basedir}/.build"
 root          = "#{basedir}"
 src           = "#{root}/src"
 htdocs_src    = "#{root}/htdocs"
-require! 'glob'
 
+require! 'glob'
 
 export server =
   host: '0.0.0.0'
@@ -62,21 +62,22 @@ browserify =
     # Additional file extentions to make optional
     extensions:
       * \.ls
-      * \.ls
 
     bundleConfigs: []
 
 
-for file in glob.sync "#{src}/*.{ls}"
+for file in glob.sync "#{src}/*.ls"
+  console.log file
   filename  = path.basename file              # '/foo/bar.ls' => 'bar.ls'
   dotext    = path.extname filename           # .ls
   ext       = dotext.replace '.', '', 'g'     # ls
   basename  = path.basename(filename, dotext) # bar
 
+
   browserify.client.bundleConfigs.push {
     entries: "#{src}/#{filename}"
     dest: dest
-    outputName: "#{basename}-#{ext}.bundle.js"
+    outputName: "#{basename}-#{ext}.js"
   }
 
 

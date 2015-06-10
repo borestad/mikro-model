@@ -1,10 +1,4 @@
-# config = (require '../config').browserify
 module.exports = ($, options, gulp) ->
-
-  gulp.task 'watchify', [
-    'flags-set-watch',
-    'browserify'
-  ]
 
   gulp.task 'browserify', (callback) ->
     require! 'browserify'
