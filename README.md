@@ -13,12 +13,14 @@ je-model is a tiny library that simplifies the usage of models in Javascript
 - Lazy evaluate data. No need to calculate things every single time (Backbone.NestedModel *nudge nudge*)
 - Experiment with a great gulp TDD workflow
 - Zero external dependencies. It should just work.
+- Work with latest Chrome/Firefox/Webkit/PhantomJS in desktop/tablets and hopefully IE9+ (IE8 - eat my liver!)
 
 ## What is NOT the goals of this project
 - Become the new ActiveRecords
 - Become bloated
 - Solve world crisis and starvation
 - Become the fastest library on the planet. Use memoization if you need to send a rocket to the moon.
+- Support shitty non-modern browsers (I've worked with the web ~15 years, no more wasting time supporting IE 5.5 and Netscape 4.7)
 
 ## Why another Javascript Model library?
 - Because I like nesting objects with metadata
