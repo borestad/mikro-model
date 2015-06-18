@@ -1,7 +1,7 @@
 require! 'path'
 
 basedir       = path.resolve(process.cwd!)
-dest          = "#{basedir}/.build"
+dest          = "#{basedir}/build"
 root          = "#{basedir}"
 src           = "#{root}/src"
 
@@ -56,6 +56,8 @@ export browserify =
   client:
     # Enable source maps
     debug: on
+
+    bare: true
 
     # Additional file extentions to make optional
     extensions:

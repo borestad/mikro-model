@@ -59,6 +59,7 @@
     "lodash": "^3.9.3",
     "lodash-contrib": "^241.4.14",
     "minimist": "^1.1.1",
+    "mochify": "^2.9.0",
     "path": "^0.11.14",
     "prelude": "^0.1.9",
     "pretty-hrtime": "^1.0.0",
